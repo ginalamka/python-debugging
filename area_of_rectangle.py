@@ -5,7 +5,7 @@
 import sys
 
 
-def area_of_rectangle(height, width = None):
+def area_of_rectangle(height, width = None): #default of width=none. if width is none, assumed equal to height, or can specify with two numbers
     """
     Returns the area of a rectangle.
 
@@ -31,25 +31,27 @@ def area_of_rectangle(height, width = None):
     """
     if width:
         width = height
-    area = height * width
+    import pdb; pdb.set_trace()
+    area = int(height) * int(width)
     return area
 
 if __name__ == '__main__':
-    if (len(sys.argv) < 2) or (len(sys.argv) > 3):
+    if (len(sys.argv) < 2) or (len(sys.argv) > 3): #need more than one argument
         message = (
                 "{script_name}: Expecting one or two command-line arguments:\n"
                 "\tthe height of a square or the height and width of a "
-                "rectangle".format(script_name = sys.argv[0]))
-        sys.exit(message)
-    height = sys.argv[1]
+                "rectangle".format(script_name = sys.argv[0])) #sys.argv[0] the name of the argument/script name is at 0
+        sys.exit(message) #length of sys.argv . the list of arguments at command line when script is run. first argument is name of scrpt itself, then the arguments passed. here checking the length, if <2 or >3, will print this message using the new line, tab format. 
+    height = float(sys.argv[1])
     width = height
     if len(sys.argv) > 3:
-        width = sys.argv[1]
+        width = float(sys.argv[1])
 
-    area = area_of_rectangle(height, width)
+    area = area_of_rectangle(height, width) #use function to get area
 
-    message = "The area of a {h} X {w} rectangle is {a}".format(
+    message = "The area of a {h} X {w} rectangle is {a}".format(  #compose string to replace wiwth height, width, area in a string using those vvariables
             h = height,
             w = width,
             a = area)
     print(message)
+#print and then done
