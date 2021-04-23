@@ -5,7 +5,9 @@
 import sys
 
 
-def area_of_rectangle(height, width = None): #default of width=none. if width is none, assumed equal to height, or can specify with two numbers
+def area_of_rectangle(height, width = None): 
+#default of width=none. 
+#if width is none, assumed equal to height, or can specify with two numbers
     """
     Returns the area of a rectangle.
 
@@ -31,7 +33,7 @@ def area_of_rectangle(height, width = None): #default of width=none. if width is
     """
     if width:
         width = height
-    import pdb; pdb.set_trace()
+#    import pdb; pdb.set_trace()
     area = int(height) * int(width)
     return area
 
@@ -40,8 +42,13 @@ if __name__ == '__main__':
         message = (
                 "{script_name}: Expecting one or two command-line arguments:\n"
                 "\tthe height of a square or the height and width of a "
-                "rectangle".format(script_name = sys.argv[0])) #sys.argv[0] the name of the argument/script name is at 0
-        sys.exit(message) #length of sys.argv . the list of arguments at command line when script is run. first argument is name of scrpt itself, then the arguments passed. here checking the length, if <2 or >3, will print this message using the new line, tab format. 
+                "rectangle".format(script_name = sys.argv[0])) 
+                #sys.argv[0] the name of the argument/script name is at 0
+        sys.exit(message)
+         #length of sys.argv . the list of arguments at command line 
+        #when script is run. first argument is name of scrpt itself, 
+        #then the arguments passed. here checking the length, 
+        #if <2 or >3, will print this message using the new line, tab format. 
     height = float(sys.argv[1])
     width = height
     if len(sys.argv) > 3:
@@ -49,7 +56,9 @@ if __name__ == '__main__':
 
     area = area_of_rectangle(height, width) #use function to get area
 
-    message = "The area of a {h} X {w} rectangle is {a}".format(  #compose string to replace wiwth height, width, area in a string using those vvariables
+    message = "The area of a {h} X {w} rectangle is {a}".format(  
+    #compose string to replace wiwth height, width, area 
+    #in a string using those variables
             h = height,
             w = width,
             a = area)
