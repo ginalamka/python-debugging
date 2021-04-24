@@ -50,11 +50,13 @@ if __name__ == '__main__':
         #then the arguments passed. here checking the length, 
         #if <2 or >3, will print this message using the new line, tab format. 
     height = float(sys.argv[1])
-    width = height
-    if len(sys.argv) > 3:
-        width = float(sys.argv[1])
+    width = float(sys.argv[1])
+    #width = height
+    if len(sys.argv) == 3:
+        width = float(sys.argv[2])
 
-    area = area_of_rectangle(height, width) #use function to get area
+    area = int(height) * int(width)
+    #area = area_of_rectangle(height, width) #use function to get area
 
     message = "The area of a {h} X {w} rectangle is {a}".format(  
     #compose string to replace wiwth height, width, area 
